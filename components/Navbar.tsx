@@ -1,9 +1,21 @@
-import React from 'react'
+"use client";
+import Box from "@mui/material/Box/Box";
+import { Typography } from "@mui/material";
 
 const Navbar = () => {
   return (
-    <div>This  is a Navbar</div>
-  )
-}
+    <>
+      <div className="navbar-container">
+        <div>
+          <Typography>HostelScout ggg checking</Typography>
+        </div>
+        <div>
+          <input type="text" />
+        </div>
+        <div></div>
+      </div>
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
