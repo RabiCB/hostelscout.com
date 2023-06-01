@@ -7,7 +7,7 @@ const Navbar = () => {
     <>
       <div className="navbar-container">
         <div>
-          <Typography>HostelScout checking</Typography>
+          <Typography>HostelScout ggg checking</Typography>
         </div>
         <div>
           <input type="text" />
