@@ -14,7 +14,7 @@ const ProfileChips = () => {
     <>
       <div
         onClick={handleDropdown}
-        className=" relative flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
+        className=" relative z-10 flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
       >
         <FiMenu size={25} />
         <BsPersonCircle size={25} />
