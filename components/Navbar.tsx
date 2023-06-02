@@ -1,18 +1,28 @@
 "use client";
-import Box from "@mui/material/Box/Box";
 import { Typography } from "@mui/material";
+import {  BsSearch } from "react-icons/bs";
+import ProfileChips from "./ProfileChips";
 
 const Navbar = () => {
   return (
     <>
-      <div className="navbar-container">
+      <div className="navbar-container border-[1px] border-[#DDDDDD] flex px-[4rem] justify-between items-center h-[5rem] ">
         <div>
-          <Typography>HostelScout ggg checking</Typography>
+          <Typography className="font-bold text-[#1D3557] text-xl">
+            HostelScout
+          </Typography>
         </div>
-        <div>
-          <input type="text" />
+        <div className="relative">
+          <input
+            className="bg-white sm:w-[300px] md:w-[400px] lg:w-[500px] outline-1 outline-[#E63946] border border-[#dddddd] shadow-md rounded-[1.5rem] text-[#878a8d] block text-[12px] py-[0.8rem] px-[1rem] font-[400]  "
+            type="text"
+            placeholder="Search..."
+          />
+          <div className=" absolute right-[8px] cursor-pointer top-[5px] flex justify-center items-center rounded-[50%] bg-[#E63946] w-[35px] h-[35px] text-white ">
+            <BsSearch size={15} />
+          </div>
         </div>
-        <div></div>
+          <ProfileChips/>
       </div>
     </>
   );
