@@ -23,7 +23,7 @@ export default function Page() {
       <div className="flex flex-col mb-3 mt-10 p-2">
         <span className="text-center font-semibold ">Sigin With Email and Password</span>
 
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[40px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] bg-gray-200'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col max-[400px]:w-[360px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[40px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] bg-gray-200'>
           <div className="flex flex-col">
             <input
               className="border-1 border-black rounded-md p-2 w-full"
