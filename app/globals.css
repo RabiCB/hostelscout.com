@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --accent-primary : #E63946;
+    --accent-gray : #878a8d;
+    
+  }
+  
