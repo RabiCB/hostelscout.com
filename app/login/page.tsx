@@ -4,19 +4,52 @@ import { Button, Input } from "@mui/material"
 import React from "react"
 import { useForm } from "react-hook-form"
 import Link from "next/link"
+import { Client, Account, ID } from 'appwrite';
 
 type formData = {
   email: string,
+  name:string,
   password: string,
 }
 export default function Page() {
+
+
+  
+
   const {
     register,
     handleSubmit,
 
     formState: { errors },
   } = useForm<formData>();
-  const onSubmit = (data: any) => console.log(data);
+ 
+  const onClicked= (data:any) => {
+    console.log("console",data)
+
+    const client = new Client()
+      .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+      .setProject('647b1d99a6be71182293');               // Your project ID
+
+    const account = new Account(client);
+
+    const promise = account.create(
+      ID.unique(),
+      
+      "rollinrabin123@gmail.com",
+      "rabindra Bhandari",
+      "rabinbhn",
+
+    );
+
+    promise.then(function (response) {
+      console.log(response);
+    }, function (error) {
+      console.log(error);
+    });
+  }
+  const onSubmit=(data:any)=>{
+
+  }
 
   return (
     <div className=" flex flex-1 items-center justify-center h-full">
@@ -24,6 +57,7 @@ export default function Page() {
         <span className="text-center font-semibold ">Sigin With Email and Password</span>
 
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col max-[400px]:w-[360px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[40px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] bg-gray-200'>
+        
           <div className="flex flex-col">
             <input
               className="border-1 border-black rounded-md p-2 w-full"
@@ -31,9 +65,9 @@ export default function Page() {
 
               {...register("email", {
                 required: 'email is required',
-                pattern:{
+                pattern: {
                   value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                  message:"email is invalid"
+                  message: "email is invalid"
                 }
               }
               )
@@ -50,6 +84,7 @@ export default function Page() {
             <input
               className="border-1  border-black rounded-md p-2 w-full"
               placeholder="enter your password"
+              type="password"
 
               {...register("password", {
                 required: 'password is required',
@@ -69,11 +104,11 @@ export default function Page() {
             }
           </div>
 
-          <Button style={{ borderRadius: "6px" ,backgroundColor:"black"}} type="submit" variant="contained">login</Button>
+          <Button onClick={onClicked} style={{ borderRadius: "6px", backgroundColor: "black" }} type="submit" variant="contained">login</Button>
         </form>
         <div className="flex items-center ml-3 mt-1">
           <span className="text-sm font-semibold mr-1">Don`t have an Account ?</span>
-          <Link className="cursor-pointer text-blue-600"  href="/signup">register</Link>
+          <Link className="cursor-pointer text-blue-600" href="/signup">register</Link>
         </div>
       </div>
     </div>
