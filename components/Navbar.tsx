@@ -8,9 +8,9 @@ const Navbar = () => {
     <>
       <div className="navbar-container border-[1px] border-[#DDDDDD] flex px-[4rem] justify-between items-center h-[5rem] ">
         <div>
-          <Typography className="font-bold text-[#1D3557] text-xl">
+          <span className="font-bold text-[#1D3557] text-xl">
             HostelScout
-          </Typography>
+          </span>
         </div>
         <div className="relative">
           <input
