@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 
 export default function Skeletonvariant() {
   return (
-    <Stack spacing={1}>
+    <Stack >
      
       <Skeleton variant="rounded" height={240} className="w-full rounded-lg " />
       <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
