@@ -51,7 +51,7 @@ function Homepage() {
                         <img src={d.image} className="w-full rounded-lg h-64 aspect-square " alt="hostelimg" />
                         <div className="pl-1 flex flex-col gap-[2px]">
                             <span className="text-sm font-semibold">{d?.Location}</span>
-                            <span className="text-sm font-semibold">{d?.hostname}</span>
+                            <span className="text-sm font-semibold">{d?.hostelname}</span>
                             <span className="text-gray-600 text-xs">Owned By {d?.ownedby}</span>
                             <span className="text-gray-600 text-xs">Rs {d?.price}</span>
                             <FcLike fontSize={18} className="absolute top-4 right-2 cursor-pointer" />
