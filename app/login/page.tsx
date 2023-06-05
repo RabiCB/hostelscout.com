@@ -11,7 +11,7 @@ type formData = {
   name:string,
   password: string,
 }
-export default function Page() {
+export default function Login() {
 
 
   

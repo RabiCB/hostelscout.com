@@ -5,6 +5,7 @@ import { hosteldata } from "../dummydata/data"
 import Image from "next/image"
 import { FcLike } from "react-icons/fc"
 import { Button } from "@mui/material"
+import Link from "next/link"
 import { Client, Query, Databases } from "appwrite"
 import Skeletonvariant from "../features/skeleton"
 function Homepage() {
@@ -46,7 +47,7 @@ function Homepage() {
 
             {
                 appwrite.length>1? appwrite.map((d: any) => (
-                    <div key={d.$id} className=" flex flex-col gap-1 relative">
+                   <Link   href={`/hostel/${d?.$id}`} ><div key={d.$id}  className=" flex flex-col gap-1 relative">
 
                         <img src={d.image} className="w-full rounded-lg h-64 aspect-square " alt="hostelimg" />
                         <div className="pl-1 flex flex-col gap-[2px]">
@@ -59,6 +60,7 @@ function Homepage() {
 
 
                     </div>
+                    </Link>
                 )) : (<>
                 <Skeletonvariant/>
                 <Skeletonvariant/>
