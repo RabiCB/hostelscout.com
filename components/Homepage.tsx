@@ -47,7 +47,7 @@ function Homepage() {
 
             {
                 appwrite.length>1? appwrite.map((d: any) => (
-                   <Link   href={`/hostel/${d?.$id}`} key={d.$id}><div key={d.$id}  className=" flex flex-col gap-1 relative">
+                   <Link   href={`/hostel/${d?.$id}`} key={d.hostelname}><div key={d.$id}  className=" flex flex-col gap-1 relative">
 
                         <img src={d.image} className="w-full rounded-lg h-64 aspect-square " alt="hostelimg" />
                         <div className="pl-1 flex flex-col gap-[2px]">
