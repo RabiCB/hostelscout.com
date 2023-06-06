@@ -3,9 +3,9 @@
 import React from "react"
 import { useState,useEffect } from "react"
 import { Client,Databases } from "appwrite"
-import RootLayout from "@/app/layout"
+
 import {useRouter} from "next/navigation"
-import Navbar from "@/components/Navbar"
+import Loader from "../../../components/Loading"
 import {FiMapPin } from "react-icons/fi"
 
 export default function Page({params:{id}}:any){
@@ -45,11 +45,13 @@ export default function Page({params:{id}}:any){
             console.log(error);
         });
 
-    }, [])
+    }, [id])
 
-    return<div className="h-auto w-full flex flex-col px-6">
+    return(<div className="h-auto w-full flex flex-col px-6 mt-4">
 
-         {appwrite?<div className="flex flex-col gap-1"> 
+
+        {appwrite ?<div className="flex flex-col gap-1"> 
+
         <p className="font-bold text-base">{appwrite?.hostelname}</p>
         <span className="font-semibold flex gap-0.5 items-center text-md">{appwrite?.Location||"-" }<FiMapPin/></span>
         <img src={appwrite?.image} alt="hostelimg" className="w-full h-[300px] object-cover rounded-md"/>
@@ -58,7 +60,9 @@ export default function Page({params:{id}}:any){
         <p className="text-xs text-gray-600 mt-1">{appwrite?.description||"-"}</p>
         <span className="text-xs text-gray-600 font-semibold">Rs {appwrite?.price}</span>
 
-        </div>:<span>Loading</span>}
-    </div>
+
+        </div>:<Loader/>}
+    </div>)
+
 }
 
