@@ -49,7 +49,7 @@ export default function Page({params:{id}}:any){
 
     return<div className="h-auto w-full flex flex-col px-6">
 
-        <div className="flex flex-col gap-1"> 
+         {appwrite?<div className="flex flex-col gap-1"> 
         <p className="font-bold text-base">{appwrite?.hostelname}</p>
         <span className="font-semibold flex gap-0.5 items-center text-md">{appwrite?.Location||"-" }<FiMapPin/></span>
         <img src={appwrite?.image} alt="hostelimg" className="w-full h-[300px] object-cover rounded-md"/>
@@ -58,7 +58,7 @@ export default function Page({params:{id}}:any){
         <p className="text-xs text-gray-600 mt-1">{appwrite?.description||"-"}</p>
         <span className="text-xs text-gray-600 font-semibold">Rs {appwrite?.price}</span>
 
-        </div>
+        </div>:<span>Loading</span>}
     </div>
 }
 
