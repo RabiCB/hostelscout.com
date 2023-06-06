@@ -2,6 +2,9 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 import { useState,useEffect,useRef } from "react";
 import Link from "next/link";
+import React from "react";
+import {BiHelpCircle, BiLogInCircle} from 'react-icons/bi'
+import {MdOutlineCreate} from 'react-icons/md'
 
 
 const ProfileChips = () => {
@@ -37,10 +40,10 @@ const ProfileChips = () => {
       <div
         ref={ref}
         onClick={handleDropdown}
-        className=" relative z-10 flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
+        className=" relative  flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
       >
         <FiMenu className="text-[#878a8d]" size={25} />
-        <BsPersonCircle className="text-[#878a8d]" size={25} />
+        <BsPersonCircle className="text-[#878a8d] hidden sm:flex " size={25} />
         <div
           className={
             !open
@@ -49,16 +52,18 @@ const ProfileChips = () => {
           }
         >
           <Link
-            className="px-4 hover:text-white hover:bg-[#E63946] py-[0.5rem] "
+            className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
             href="#"
           >
             Sign Up
+            <MdOutlineCreate size={25} />
           </Link>
           <Link
-            className="px-4 hover:text-white hover:bg-[#E63946] py-3 border-b-[1px] border-[#dddddd] "
+            className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-3 border-b-[1px] border-[#dddddd] "
             href="/login"
           >
             Log in
+            <BiLogInCircle size={25} />
           </Link>
           <Link
             className="px-4 hover:text-white hover:bg-[#E63946] py-3 "
@@ -67,10 +72,11 @@ const ProfileChips = () => {
             HostelScout
           </Link>
           <Link
-            className="px-4 hover:text-white hover:bg-[#E63946] py-3 "
+            className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-3 "
             href="#"
           >
             Help
+            <BiHelpCircle size={25} />
           </Link>
         </div>
       </div>

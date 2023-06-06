@@ -3,9 +3,9 @@
 import React from "react"
 import { useState,useEffect } from "react"
 import { Client,Databases } from "appwrite"
-import RootLayout from "@/app/layout"
+// import RootLayout from "@/app/layout"
 import {useRouter} from "next/navigation"
-import Navbar from "@/components/Navbar"
+// import Navbar from "@/components/Navbar"
 import {FiMapPin } from "react-icons/fi"
 
 export default function Page({params:{id}}:any){
