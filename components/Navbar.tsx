@@ -1,9 +1,37 @@
 "use client";
 import { Typography } from "@mui/material";
-import {  BsSearch } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import { useEffect,useState } from "react";
 import ProfileChips from "./ProfileChips";
+import { Client, Account } from "appwrite";
+
 
 const Navbar = () => {
+
+const [user,setUser]=useState<any>("")
+
+
+  useEffect(() => {
+
+    const client = new Client();
+
+    const account = new Account(client);
+
+    client
+      .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+      .setProject('647b1d99a6be71182293') // Your project ID
+      ;
+
+    const promise = account.get();
+
+    promise.then(function (response) {
+      console.log(response); 
+      setUser(response);
+    }, function (error) {
+      console.log(error); // Failure
+    });
+
+  }, [])
   return (
     <>
       <div className="navbar-container border-[1px] border-[#DDDDDD] flex px-[4rem] justify-between items-center h-[5rem] ">
@@ -22,7 +50,7 @@ const Navbar = () => {
             <BsSearch size={15} />
           </div>
         </div>
-          <ProfileChips/>
+        <ProfileChips user={user}/>
       </div>
     </>
   );
