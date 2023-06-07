@@ -56,6 +56,7 @@ export default function Register() {
           Welcome back! Please enter your details
         </span>
 
+<<<<<<< HEAD:app/register/page.tsx
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col max-[400px]:w-[360px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[20px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] "
@@ -76,6 +77,21 @@ export default function Register() {
                     message: "username must be more than 4 character",
                   },
                   maxLength: {
+=======
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col max-[400px]:w-[360px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[40px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] bg-gray-200'>
+        <div className="flex flex-col">
+            <input
+              className="border-1 border-black rounded-md p-2 w-full"
+              placeholder="enter your username"
+
+              {...register("name", {
+                required: 'username is required',
+                minLength: {
+                  value: 4,
+                  message: "username must be more than 4 character"
+                },
+                maxLength: {
+>>>>>>> e4bf776d0d65dab3f7915c8cb549b2b4b9deb644:app/signup/page.tsx
                     value: 20,
                     message: "username must be less than 20 character",
                   },
@@ -142,10 +158,20 @@ export default function Register() {
               </span>
             )}
           </div>
+
+          {/* <Button
+            style={{ borderRadius: "6px", backgroundColor: "black" }}
+            type="submit"
+            variant="contained"
+            className="bg-red-700"
+          >
+            Signup
+          </Button> */}
           <button className="bg-[#E63946] hover:bg-[#ce3340] py-2 rounded-[20px] text-white ">
             Sign Up
           </button>
         </form>
+<<<<<<< HEAD:app/register/page.tsx
         <div className="flex items-center justify-center ml-3 mt-1">
           <span className="text-sm text-[#5C6574] font-semibold mr-1">
             Already Have Account ?
@@ -153,6 +179,11 @@ export default function Register() {
           <Link className="cursor-pointer text-[#E63946]" href="/login">
             Login
           </Link>
+=======
+        <div className="flex items-center ml-3 mt-1">
+          <span className="text-sm font-semibold mr-1">Don`t have an Account ?</span>
+          <Link className="cursor-pointer text-blue-600" href="/login">login</Link>
+>>>>>>> e4bf776d0d65dab3f7915c8cb549b2b4b9deb644:app/signup/page.tsx
         </div>
       </div>
     </div>

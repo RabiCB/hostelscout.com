@@ -1,10 +1,37 @@
 "use client"
 import React from "react";
 import ProfileChips from "./ProfileChips";
+import { useEffect,useState } from "react";
+import { Client,Account } from "appwrite";
 import { useRouter } from "next/navigation";
 
 const Commonnav = () => {
     const router =useRouter()
+    const [user,setUser]=useState<any>("")
+
+
+    useEffect(() => {
+
+      const client = new Client();
+  
+      const account = new Account(client);
+  
+      client
+        .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+        .setProject('647b1d99a6be71182293') // Your project ID
+        ;
+  
+      const promise = account.get();
+  
+      promise.then(function (response) {
+        console.log(response); 
+        setUser(response);
+      }, function (error) {
+        console.log(error); // Failure
+      });
+  
+    }, [])
+
     
   return (
     <>
@@ -14,7 +41,7 @@ const Commonnav = () => {
             HostelScout
           </span>
         </div>
-        <ProfileChips/>
+        <ProfileChips user={user}/>
         
           
       </div>
