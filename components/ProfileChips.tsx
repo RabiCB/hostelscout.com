@@ -69,7 +69,7 @@ const ProfileChips = ({ user ,logout}: any) => {
             <>
               <Link
                 className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
-                href="/register"
+                href="/signup"
               >
                 Sign Up
                 <MdOutlineCreate size={25} />
