@@ -8,7 +8,7 @@ export default function DetailLayout({
 }) {
     return (
         <>
-            <Commonnav/>
+            
             <main>{children}</main>
         </>
     )
