@@ -2,14 +2,16 @@ import { BsPersonCircle } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-
+import React from "react";
+import { BiHelpCircle, BiLogInCircle } from "react-icons/bi";
+import { MdOutlineCreate } from "react-icons/md";
 
 const ProfileChips = ({ user }: any) => {
   const [open, setOpen] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
 
-  // to close 
+  // to close
   useEffect(() => {
     const checkIfClickedOutside = (e: any) => {
       if (open && ref.current && !ref.current.contains(e.target)) {
@@ -30,17 +32,16 @@ const ProfileChips = ({ user }: any) => {
     setOpen(!open);
   };
 
-
-  console.log("reeggege", user)
+  console.log("reeggege", user);
   return (
     <>
       <div
         ref={ref}
         onClick={handleDropdown}
-        className=" relative z-10 flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
+        className=" relative  flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
       >
         <FiMenu className="text-[#878a8d]" size={25} />
-        <BsPersonCircle className="text-[#878a8d]" size={25} />
+        <BsPersonCircle className="text-[#878a8d] " size={25} />
         <span className="text-[8px] my-auto">{user?.name}</span>
         <div
           className={
@@ -49,10 +50,10 @@ const ProfileChips = ({ user }: any) => {
               : " flex absolute text-[var(--accent-gray)] right-0 top-[3rem] w-[200px]  py-4 flex-col rounded-md shadow-md bg-white"
           }
         >
-          {user ?
+          {user ? (
             <>
               <Link
-                className="px-4 hover:text-white hover:bg-[#E63946] py-[0.5rem] "
+                className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
                 href="#"
               >
                 Add your property
@@ -64,22 +65,24 @@ const ProfileChips = ({ user }: any) => {
                 Logout
               </div>
             </>
-            : <>
+          ) : (
+            <>
               <Link
-                className="px-4 hover:text-white hover:bg-[#E63946] py-[0.5rem] "
+                className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
                 href="/register"
               >
                 Sign Up
+                <MdOutlineCreate size={25} />
               </Link>
               <Link
-                className="px-4 hover:text-white hover:bg-[#E63946] py-3 border-b-[1px] border-[#dddddd] "
+                className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-3 border-b-[1px] border-[#dddddd] "
                 href="/login"
               >
                 Log in
+                <BiLogInCircle size={25} />
               </Link>
-
             </>
-          }
+          )}
           <Link
             className="px-4 hover:text-white hover:bg-[#E63946] py-3 "
             href="#"
@@ -87,10 +90,11 @@ const ProfileChips = ({ user }: any) => {
             HostelScout
           </Link>
           <Link
-            className="px-4 hover:text-white hover:bg-[#E63946] py-3 "
+            className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-3 "
             href="#"
           >
             Help
+            <BiHelpCircle size={25} />
           </Link>
         </div>
       </div>
