@@ -61,7 +61,7 @@ export default function Register() {
         <div className="flex flex-col">
             <input
               className="border-1 border-black rounded-md p-2 w-full"
-              placeholder="enter your email"
+              placeholder="enter your username"
 
               {...register("name", {
                 required: 'username is required',
@@ -138,7 +138,7 @@ export default function Register() {
         </form>
         <div className="flex items-center ml-3 mt-1">
           <span className="text-sm font-semibold mr-1">Don`t have an Account ?</span>
-          <Link className="cursor-pointer text-blue-600" href="/signup">register</Link>
+          <Link className="cursor-pointer text-blue-600" href="/login">login</Link>
         </div>
       </div>
     </div>

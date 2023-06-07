@@ -48,14 +48,12 @@ export default function Page({params:{id}}:any){
 
     }, [id])
 
-    return(<div className="h-auto w-full flex flex-col px-6 mt-4">
+    return(<div className="h-auto w-full flex flex-col px-6 pb-6 mt-4">
 
-
-        {appwrite ?<div className="flex flex-col gap-1"> 
-
+        {appwrite ?<div className="flex flex-col gap-1.5"> 
         <p className="font-bold text-base">{appwrite?.hostelname}</p>
         <span className="font-semibold flex gap-0.5 items-center text-md">{appwrite?.Location||"-" }<FiMapPin/></span>
-        <img src={appwrite?.image} alt="hostelimg" className="w-full h-[300px] object-cover rounded-md"/>
+        <img src={appwrite?.image} alt="hostelimg" className="w-full h-[400px] max-sm:h-[300px]  object-cover rounded-md"/>
         <span className="text-xs text-gray-600 font-semibold">Uploaded At: {new Date(appwrite?.$createdAt).toDateString()}</span>
         <span className="text-xs text-gray-600 font-semibold">Owned by: {appwrite?.ownedby}</span>
         <p className="text-xs text-gray-600 mt-1">{appwrite?.description||"-"}</p>

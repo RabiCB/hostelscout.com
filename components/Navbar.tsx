@@ -4,14 +4,15 @@ import { BsSearch } from "react-icons/bs";
 import { useEffect,useState } from "react";
 import ProfileChips from "./ProfileChips";
 import { Client, Account } from "appwrite";
+import {useRouter} from "next/navigation"
 
 import React from "react";
 
 const Navbar = () => {
 
+  const router=useRouter()
+
 const [user,setUser]=useState<any>("")
-
-
   useEffect(() => {
 
     const client = new Client();
@@ -33,6 +34,32 @@ const [user,setUser]=useState<any>("")
     });
 
   }, [])
+
+  const logout=()=>{
+    const client = new Client();
+
+    const account = new Account(client);
+    
+    client
+        .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+        .setProject('647b1d99a6be71182293') // Your project ID
+    ;
+    
+    const promise = account.deleteSession('current');
+    
+    promise.then(function (response) {
+        console.log(response); 
+        router.push("/login")
+
+        // Success
+    }, function (error) {
+        console.log(error); // Failure
+    });
+
+  }
+   
+
+  
   return (
     <>
       <div className="navbar-container z-10 sticky border-[1px] border-[#DDDDDD] flex gap-1  sm:px-[4rem] justify-around  sm:justify-between items-center h-[5rem] ">
@@ -51,7 +78,7 @@ const [user,setUser]=useState<any>("")
             <BsSearch size={15} />
           </div>
         </div>
-        <ProfileChips user={user}/>
+        <ProfileChips user={user} logout={logout}/>
       </div>
     </>
   );
