@@ -42,7 +42,7 @@ promise.then(function (response) {
     router.push("/")
 }, function (error) {
     console.log(error);
-    setError(error)
+    setError(error.message)
 
 });
 
@@ -103,7 +103,7 @@ promise.then(function (response) {
 
           <Button  style={{ borderRadius: "6px", backgroundColor: "black" }} type="submit" variant="contained">login</Button>
         </form>
-        <span>{error}</span>
+        <span className="text-red-600 text-[10px] my-1 ml-0.5 text-center">{error}</span>
         <div className="flex items-center ml-3 mt-1">
           <span className="text-sm font-semibold mr-1">Don`t have an Account ?</span>
           <Link className="cursor-pointer text-blue-600" href="/signup">register</Link>

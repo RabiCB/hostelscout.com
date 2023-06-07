@@ -6,7 +6,7 @@ import React from "react";
 import { BiHelpCircle, BiLogInCircle } from "react-icons/bi";
 import { MdOutlineCreate } from "react-icons/md";
 
-const ProfileChips = ({ user }: any) => {
+const ProfileChips = ({ user ,logout}: any) => {
   const [open, setOpen] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
@@ -41,8 +41,8 @@ const ProfileChips = ({ user }: any) => {
         className=" relative  flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
       >
         <FiMenu className="text-[#878a8d]" size={25} />
-        <BsPersonCircle className="text-[#878a8d] " size={25} />
-        <span className="text-[8px] my-auto">{user?.name}</span>
+        <BsPersonCircle className="text-[#878a8d]" size={25} />
+        {user &&<span className="text-[8px] my-auto">{user?.name}</span>}
         <div
           className={
             !open
@@ -60,7 +60,7 @@ const ProfileChips = ({ user }: any) => {
               </Link>
               <div
                 className="px-4 hover:text-white hover:bg-[#E63946] py-[0.5rem] "
-                onClick={() => alert("you clicked on Logout")}
+                onClick={logout}
               >
                 Logout
               </div>
@@ -69,7 +69,7 @@ const ProfileChips = ({ user }: any) => {
             <>
               <Link
                 className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
-                href="/register"
+                href="/signup"
               >
                 Sign Up
                 <MdOutlineCreate size={25} />
