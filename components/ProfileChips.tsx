@@ -64,7 +64,7 @@ const ProfileChips = ({ user }: any) => {
                 Logout
               </div>
             </>
-            : <div>
+            : <>
               <Link
                 className="px-4 hover:text-white hover:bg-[#E63946] py-[0.5rem] "
                 href="/register"
@@ -78,7 +78,7 @@ const ProfileChips = ({ user }: any) => {
                 Log in
               </Link>
 
-            </div>
+            </>
           }
           <Link
             className="px-4 hover:text-white hover:bg-[#E63946] py-3 "
