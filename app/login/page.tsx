@@ -7,6 +7,17 @@ import Link from "next/link";
 import { Client, Account, ID } from "appwrite";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import {AiFillEyeInvisible,AiFillEye} from "react-icons/ai"
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 type formData = {
   email: string;
@@ -15,6 +26,8 @@ type formData = {
 };
 export default function Login() {
   const [error, setError] = useState("");
+   const [showpassword,setShowpassword]=useState(false)
+  const [open,setOpen]=React.useState(false)
   const router = useRouter();
 
   const {
@@ -37,6 +50,7 @@ export default function Login() {
       function (response) {
         console.log(response);
         router.push("/");
+        setOpen(true)
       },
       function (error) {
         console.log(error);
@@ -44,8 +58,16 @@ export default function Login() {
       }
     );
   };
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
+    <>
     <div className=" flex  bg-[#F5F5F7] p-4  items-center justify-center h-[100vh]">
       <div className="flex flex-col  bg-white shadow-lg rounded-[10px] py-4">
         <span className="text-center text-[#5C6574] text-xl font-bold ">
@@ -87,28 +109,39 @@ export default function Login() {
 
           <div className="flex flex-col">
             <div className="flex flex-col gap-2" >
+
             <label className="text-[#5C6574] font-[500] " htmlFor="password">
                 Password
               </label>
+              <div className="relative flex items-center">
               <input
                 id="password"
                 className="border-[1px] border-[#DEDEDE] outline-[1px] outline-[#E63946] rounded-md p-2 w-full"
                 placeholder="Enter your password"
-                type="password"
+                type={showpassword?"text":"password"}
+                
                 {...register("password", {
                   required: "password is required",
                   minLength: {
                     value: 6,
                     message: "password must be more than six character",
                   },
-                })}
-              />
+                })}>
+                  
+                </input>
+                <span className="absolute right-4" onClick={()=>setShowpassword(!showpassword)}>{showpassword?<AiFillEyeInvisible/>:<AiFillEye/>}</span>
+                </div>
+                
+              
+             
             </div>
             {errors.password?.message && (
               <span className="text-red-600 ml-0.5 text-[10px] mt-1.5">
                 {errors?.password?.message}
               </span>
             )}
+            
+            
           </div>
 
           <button className="bg-[#E63946] hover:bg-[#ce3340] py-2 rounded-[20px] text-white ">
@@ -126,5 +159,15 @@ export default function Login() {
         </div>
       </div>
     </div>
+
+    <Stack spacing={2} sx={{ width: '100%' }}>
+      <Snackbar open={open} autoHideDuration={8000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+         Logged in successfully
+        </Alert>
+      </Snackbar>
+      </Stack>
+    
+    </>
   );
 }
