@@ -27,7 +27,7 @@ const [user,setUser]=useState<any>("")
     const promise = account.get();
 
     promise.then(function (response) {
-      console.log(response); 
+      console.log("ggg",response); 
       setUser(response);
     }, function (error) {
       console.log(error); // Failure
