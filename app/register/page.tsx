@@ -6,6 +6,18 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Client, Account, ID } from "appwrite";
 import { useRouter } from "next/navigation";
+import CustomizedSnackbars from "../../features/snackbar"
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 
 type formData = {
   email: string;
@@ -20,6 +32,7 @@ export default function Register() {
     formState: { errors },
   } = useForm<formData>();
 
+  const [open, setOpen] = React.useState<boolean>(false);
   const router = useRouter();
   const onSubmit = (data: any) => {
     const client = new Client()
@@ -30,7 +43,6 @@ export default function Register() {
 
     const promise = account.create(
       ID.unique(),
-
       data?.email,
       data?.password,
       data?.name
@@ -39,8 +51,9 @@ export default function Register() {
     promise.then(
       function (response) {
         console.log(response);
-        router.push("/");
-        alert("registered successfully");
+        router.push("/login");
+        setOpen(true)
+        
       },
       function (error) {
         console.log(error);
@@ -48,7 +61,16 @@ export default function Register() {
     );
   };
 
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   return (
+    <>
     <div className=" flex  bg-[#F5F5F7] p-4  items-center justify-center h-[100vh]">
       <div className="flex flex-col  bg-white shadow-lg rounded-[10px] py-4 ">
         <span className="text-center text-[#5C6574] text-xl font-bold ">Sign Up</span>
@@ -156,5 +178,16 @@ export default function Register() {
         </div>
       </div>
     </div>
+    <>
+    <Stack spacing={2} sx={{ width: '100%' }}>
+      <Snackbar open={open} autoHideDuration={8000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Account created successfully please login
+        </Alert>
+      </Snackbar>
+      </Stack>
+    </>
+
+    </>
   );
 }

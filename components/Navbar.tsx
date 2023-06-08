@@ -22,7 +22,7 @@ const [user,setUser]=useState<any>("")
     client
       .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
       .setProject('647b1d99a6be71182293') // Your project ID
-      ;
+      
 
     const promise = account.get();
 
