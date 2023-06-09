@@ -9,7 +9,9 @@ import { useRouter } from "next/navigation";
 import CustomizedSnackbars from "../../features/snackbar"
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
+import { useState } from "react";
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import {AiFillEyeInvisible,AiFillEye} from "react-icons/ai"
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -34,6 +36,8 @@ export default function Register() {
 
   const [open, setOpen] = React.useState<boolean>(false);
   const router = useRouter();
+  const [showpassword,setShowpassword]=useState(false)
+  const [error,setError]=useState('')
   const onSubmit = (data: any) => {
     const client = new Client()
       .setEndpoint("https://cloud.appwrite.io/v1") // Your API Endpoint
@@ -57,6 +61,7 @@ export default function Register() {
       },
       function (error) {
         console.log(error);
+        setError(error.message)
       }
     );
   };
@@ -80,7 +85,7 @@ export default function Register() {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col max-[400px]:w-[360px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[20px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] "
+          className="flex flex-col max-[400px]:w-[340px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[20px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] "
         >
           <div className="flex flex-col">
             <div className="flex flex-col gap-2 ">
@@ -140,23 +145,24 @@ export default function Register() {
               <label className="text-[#5C6574] font-[500] " htmlFor="password">
                 Password
               </label>
+              <div className="relative flex items-center">
               <input
                 id="password"
                 className="border-[1px] border-[#DEDEDE] outline-[1px] outline-[#E63946] rounded-md p-2 w-full"
                 placeholder="Enter your password"
-                type="password"
+                type={showpassword?"text":"password"}
+                
                 {...register("password", {
                   required: "password is required",
                   minLength: {
                     value: 6,
-                    message: "password must be more than 6 characters",
+                    message: "password must be more than six character",
                   },
-                  maxLength: {
-                    value: 16,
-                    message: "password must be less than 16 characters",
-                  },
-                })}
-              />
+                })}>
+                  
+                </input>
+                <span className="absolute right-4" onClick={()=>setShowpassword(!showpassword)}>{showpassword?<AiFillEyeInvisible/>:<AiFillEye/>}</span>
+                </div>
             </div>
             {errors.password?.message && (
               <span className="text-red-600 ml-0.5 text-[10px] mt-1.5">
@@ -168,6 +174,7 @@ export default function Register() {
             Sign Up
           </button>
         </form>
+       <span className="text-red-600 ml-0.5 text-[10px] mt-1.5">{error}</span> 
         <div className="flex items-center justify-center ml-3 mt-1">
           <span className="text-sm text-[#5C6574] font-semibold mr-1">
             Already Have Account ?
