@@ -54,7 +54,7 @@ export default function Login() {
       },
       function (error) {
         console.log(error);
-        setError(error);
+        setError(error.message);
       }
     );
   };
@@ -79,7 +79,7 @@ export default function Login() {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col max-[400px]:w-[360px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[40px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px]"
+          className="flex flex-col max-[400px]:w-[340px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[40px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px]"
         >
           <div className="flex flex-col">
             <div className="flex flex-col gap-2">
@@ -148,7 +148,7 @@ export default function Login() {
             Log in
           </button>
         </form>
-        <span>{error}</span>
+        <span className="text-red-600 ml-0.5 text-[10px] mt-1.5">{error}</span>
         <div className="flex items-center justify-center ml-3 mt-1">
           <span className="text-sm  text-[#5C6574] font-semibold mr-1">
             Don`t have an Account ?
