@@ -85,7 +85,7 @@ export default function Register() {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col max-[400px]:w-[340px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[20px]  p-8 gap-7 m-2 shadow-myshadow rounded-[8px] "
+          className="flex flex-col max-[400px]:w-[334px] max-sm:w-[380px] max-md:w-[460px]  w-[500px]  mt-[20px]  p-8 gap-7 mx-2 mb-1 shadow-myshadow rounded-[8px] "
         >
           <div className="flex flex-col">
             <div className="flex flex-col gap-2 ">
@@ -173,8 +173,9 @@ export default function Register() {
           <button className="bg-[#E63946] hover:bg-[#ce3340] py-2 rounded-[20px] text-white ">
             Sign Up
           </button>
+          <span className="text-red-600 ml-0.5 text-[10px] mt-1 text-center">{error}</span> 
         </form>
-       <span className="text-red-600 ml-0.5 text-[10px] mt-1.5">{error}</span> 
+       
         <div className="flex items-center justify-center ml-3 mt-1">
           <span className="text-sm text-[#5C6574] font-semibold mr-1">
             Already Have Account ?

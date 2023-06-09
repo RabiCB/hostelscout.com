@@ -42,7 +42,7 @@ const ProfileChips = ({ user ,logout}: any) => {
       >
         <FiMenu className="text-[#878a8d]" size={25} />
         <BsPersonCircle className="text-[#878a8d]" size={25} />
-        {user &&<span className="text-[8px] my-auto">{user?.name}</span>}
+        
         <div
           className={
             !open
@@ -54,7 +54,7 @@ const ProfileChips = ({ user ,logout}: any) => {
             <>
               <Link
                 className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
-                href="#"
+                href="/addproperty"
               >
                 Add your property
               </Link>
