@@ -148,7 +148,7 @@ export default function Login() {
             Log in
           </button>
         </form>
-        <span className="text-red-600 ml-0.5 text-[10px] mt-1.5">{error}</span>
+        <span className="text-red-600 ml-0.5 text-[10px] mt-1.5 text-center" >{error}</span>
         <div className="flex items-center justify-center ml-3 mt-1">
           <span className="text-sm  text-[#5C6574] font-semibold mr-1">
             Don`t have an Account ?
