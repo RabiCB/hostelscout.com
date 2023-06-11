@@ -70,7 +70,7 @@ promise.then(function (response) {
       <input type="file" className='hidden' ref={ref} accept="image/*" onChange={handleImageChange} />
       <div className='flex items-center jusify-center my-2 flex-col relative'>
       {previewImage && (
-        <img src={previewImage} className='rounded-md ' alt="Preview" style={{ maxWidth: '260px' }} />
+        <img src={previewImage} className='rounded-md ' alt="Preview" style={{ maxWidth: '200px' }} />
       )}
      
       </div>
