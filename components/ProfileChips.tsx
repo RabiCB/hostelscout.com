@@ -58,6 +58,12 @@ const ProfileChips = ({ user ,logout}: any) => {
               >
                 Add your property
               </Link>
+              <Link
+                className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "
+                href="/addproperty"
+              >
+                Profile
+              </Link>
               <div
                 className="px-4 hover:text-white hover:bg-[#E63946] py-[0.5rem] "
                 onClick={logout}
