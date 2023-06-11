@@ -16,8 +16,16 @@ function Homepage() {
 
     const [loadmore ,setLoadmore]=useState(false)
      const ref=useRef<HTMLDivElement>(null)
+
+const  refresh=()=>{
+    const lastChildElement = ref.current?.lastElementChild;
+    lastChildElement?.scrollIntoView({ behavior: 'smooth' });
+
+}
+    
     const hanldeIncrease=()=>{
         setDocs((prev)=>prev+8)
+        refresh()
         setLoadmore(true)
     }
     
