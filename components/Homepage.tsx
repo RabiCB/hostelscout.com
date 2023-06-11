@@ -17,10 +17,7 @@ function Homepage() {
     const [loadmore ,setLoadmore]=useState(false)
      const ref=useRef<HTMLDivElement>(null)
      
-     const refresh=()=>{
-         const lastChildElement = ref.current?.lastElementChild;
-    lastChildElement?.scrollIntoView({ behavior: 'smooth' });
-     }
+   
          
    
 
@@ -29,7 +26,7 @@ function Homepage() {
         setDocs((prev)=>prev+8)
        
         setLoadmore(true)
-        refresh()
+       
     }
     
 
@@ -63,6 +60,11 @@ function Homepage() {
         });
 
     }, [docs])
+    
+      useEffect(() => {
+     const lastChildElement = ref.current?.lastElementChild;
+    lastChildElement?.scrollIntoView({ behavior: 'smooth' });
+  }, [appwrite]);
                                                 
     return (
         <div ref={ref}  className="max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 h-auto grid px-6 grid-cols-4 gap-6 mt-4 pb-6 relative">
