@@ -8,12 +8,14 @@ import { Button } from "@mui/material"
 import Link from "next/link"
 import { Client, Query, Databases } from "appwrite"
 import Skeletonvariant from "../features/skeleton"
-
+import {useLoadcounter} from "../Zustandstores/loadcounter"
 function Homepage() {
 
+    const {loadcount,increaseloadccount}=useLoadcounter()
     const [appwrite, setAppwrite] = useState<any | []>([])
+    const [documents,setDocuments]=useState<number|null|undefined>(undefined)
 
-    const [docs,setDocs]=useState(8)
+   
 
     const [loadmore ,setLoadmore]=useState(false)
      const ref=useRef<HTMLDivElement>(null)
@@ -23,13 +25,7 @@ function Homepage() {
    
 
 
-    
-    const hanldeIncrease=()=>{
-        setDocs((prev)=>prev+8)
-      
-        setLoadmore(true)
-       
-    }
+  
     
 
     useEffect(() => {
@@ -44,26 +40,29 @@ function Homepage() {
             "647b2b550dddd5971409",
 
              [
-        Query.limit(docs),
+        Query.limit(loadcount),
         Query.offset(0)
     ]
 
+
+    
 
 
         );
 
         promise.then(function (response) {
-            console.log(response);
+           
             setAppwrite(response?.documents)
+            setDocuments(response?.total)
 
 
         }, function (error) {
             console.log(error);
         });
 
-    }, [docs])
+    }, [loadcount])
     
-    
+    console.log("appwrite",documents)
                                                 
     return (
         <div  className="max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 h-auto grid px-6 grid-cols-4 gap-6 mt-4 pb-6 relative">
@@ -102,8 +101,8 @@ function Homepage() {
                 
             }
 
-        
-                {loadmore?"":<span className="absolute right-4 bottom-2" onClick={hanldeIncrease}>loadmore</span>}
+            
+                {documents>loadcount ?<span className="absolute right-4 bottom-2 cursor-pointer  rounded-md  text-[#000]" onClick={()=>increaseloadccount(4)}>loadmore</span>:<span className="absolute right-4 bottom-2 cursor-pointer  rounded-md  text-[#000]" >nomore data</span>}
             
 
         </div>
