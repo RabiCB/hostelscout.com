@@ -11,7 +11,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export default function CustomizedSnackbars({open,setOpen}:any) {
+export default function CustomizedSnackbars({open,setOpen,message}:any) {
  
 
  
@@ -26,9 +26,11 @@ export default function CustomizedSnackbars({open,setOpen}:any) {
 
   return (
     <Stack spacing={2} sx={{ width: '100%' }}>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={8000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Account created successfully please login
+         {
+          message
+         }
         </Alert>
       </Snackbar>
       </Stack>
