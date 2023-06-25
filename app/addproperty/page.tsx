@@ -159,6 +159,8 @@ export default function Addproperty() {
         
         setUrl(result?.href)
 
+        console.log("ress",result)
+
 
 
        
@@ -169,7 +171,8 @@ export default function Addproperty() {
 
 
 
-    }, [selectedImage,url])
+    }, [selectedImage,previewImage,url,id])
+
     const handleImageClick = () => {
         ref.current?.click()
     }
@@ -178,7 +181,7 @@ export default function Addproperty() {
 
         setSelectedImage('')
         setPreviewImage('')
-
+        setUrl('')
     }
 
     return (
@@ -244,11 +247,11 @@ export default function Addproperty() {
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <label className="text-[10px]" htmlFor="property">Upload your Property image</label>
+                            <label className="text-[10px]" >Upload your Property image</label>
                             <input type="file" ref={ref} className="hidden" onChange={handleImageChange} />
-                            <div className=" h-32 bg-white w-full rounded-md ">
+                            <div onClick={handleImageClick}  className=" h-32 bg-white w-full rounded-md ">
 
-                                <div onClick={handleImageClick} className="flex items-center justify-center gap-2 h-full cursor-pointer border-[1px] border-gray-200">
+                                <div className="flex items-center justify-center gap-2 h-full cursor-pointer border-[1px] border-gray-200">
                                     <BsCloudUpload size={20} />
                                     <span>upload png/jpg</span>
                                 </div>
