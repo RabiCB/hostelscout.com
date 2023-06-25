@@ -15,7 +15,10 @@ export default function Home() {
     console.log("query",d)
 
   }
+<Head>
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUUDIWZF5wMie9Tlz_tZIVlZ7kH4ApfoiVgUVXhIma&s" />
 
+</Head>
 //  useEffect(()=>{
 
 
@@ -35,6 +38,8 @@ export default function Home() {
 //  },[query])
 
   return (
+    
+  
     <>
       
       <Navbar query={query} handleSearch={handleSearch} setQuery={setQuery} />
