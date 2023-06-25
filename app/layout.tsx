@@ -4,9 +4,10 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'hostelscout',
+  title: 'dormoutrider',
   description: 'find the best hostel in nepal ',
-  key:"hostel"
+  key:"hostel",
+  
 }
 
 export default function RootLayout({
