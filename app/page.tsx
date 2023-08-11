@@ -17,7 +17,7 @@ export default function Home() {
   }
 <Head>
 <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUUDIWZF5wMie9Tlz_tZIVlZ7kH4ApfoiVgUVXhIma&s" />
-
+<meta name="google-site-verification" content="XIAahfWG8YRWavFqXIBlRtVhromJbmrAf8bnRmfZIao" />
 </Head>
 //  useEffect(()=>{
 
