@@ -8,13 +8,7 @@ import { Client, Databases, ID,Query  } from "appwrite";
 
 export default function Home() {
 
-  const [query,setQuery]=useState("")
-
-  const handleSearch=(d:any)=>{
-    setQuery(d)
-    console.log("query",d)
-
-  }
+  
 <Head>
 <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUUDIWZF5wMie9Tlz_tZIVlZ7kH4ApfoiVgUVXhIma&s" />
 <meta name="google-site-verification" content="XIAahfWG8YRWavFqXIBlRtVhromJbmrAf8bnRmfZIao" />
@@ -42,7 +36,7 @@ export default function Home() {
   
     <>
       
-      <Navbar query={query} handleSearch={handleSearch} setQuery={setQuery} />
+      <Navbar  />
       <Homepage />
 
     </>

@@ -124,42 +124,46 @@ export default function Addproperty() {
 
     useEffect(() => {
 
-        const formData = new FormData();
-        const ccc = formData.append('image', selectedImage);
-        console.log("ccc", ccc)
-
-
-
-
-        const storage = new Storage(client);
-
-        const promise = storage.createFile(
-            '6484a03e93323fbc080a',
-            ID.unique(),
-            selectedImage,
-
-        );
-
-        promise.then(function (response) {
-            console.log(response);
+        if(selectedImage){
+            const formData = new FormData();
+            const ccc = formData.append('image', selectedImage);
+            console.log("ccc", ccc)
+    
+    
+    
+    
+            const storage = new Storage(client);
+    
+            const promise = storage.createFile(
+                '6484a03e93323fbc080a',
+                ID.unique(),
+                selectedImage,
+    
+            );
+    
+            promise.then(function (response) {
+                console.log(response);
+                
+                setID(response?.$id)
+    
+                // Success
+            }, function (error) {
+                console.log(error); // Failure
+            });
+    
+    
+    
+    
+    
+    
+            const result = storage.getFileView('6484a03e93323fbc080a',id );
             
-            setID(response?.$id)
+            setUrl(result?.href)
 
-            // Success
-        }, function (error) {
-            console.log(error); // Failure
-        });
+        }
 
+       
 
-
-
-
-
-        const result = storage.getFileView('6484a03e93323fbc080a',id );
-        
-        setUrl(result?.href)
-
-        console.log("ress",result)
 
 
 
