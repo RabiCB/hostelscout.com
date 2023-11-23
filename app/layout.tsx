@@ -20,11 +20,11 @@ export const metadata = {
   siteName: 'Hostelscout',
   images: [
     {
-      url: 'https://hostelscout.vercel.app/hostelscout.png',
+      url: 'https://hostelscout.vercel.app/hostelscoutlogo.png',
       
     },
     {
-      url: 'https://hostelscout.vercel.app/hostelscout.png',
+      url: 'https://hostelscout.vercel.app/hostelscoutlogo.png',
      
       alt: 'hostelscoutlogo',
     },
