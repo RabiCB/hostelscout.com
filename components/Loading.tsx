@@ -22,7 +22,7 @@ function Loader() {
             fill="currentFill"
           />
         </svg>
-        <Image src={"/hostelscoutlogo.png"} alt="logo" width={100} height={100} />
+        <Image hidden src={"/hostelscoutlogo.png"} alt="logo" width={100} height={100} />
         <span className="sr-only">Loading...</span>
       </div>
     </div>
