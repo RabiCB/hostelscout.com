@@ -15,9 +15,9 @@ export const metadata = {
  url: "https://hostelscout.vercel.app/",
  openGraph: {
   title: 'Next.js',
-  description: 'The React Framework for the Web',
+  description: 'hostels and accomodations',
   url: 'https://nextjs.org',
-  siteName: 'Next.js',
+  siteName: 'Hostelscout',
   images: [
     {
       url: 'https://nextjs.org/og.png',
@@ -28,7 +28,7 @@ export const metadata = {
       url: 'https://nextjs.org/og-alt.png',
       width: 1800,
       height: 1600,
-      alt: 'My custom alt',
+      alt: 'hostelscoutlogo',
     },
   ],
   locale: 'en_US',
