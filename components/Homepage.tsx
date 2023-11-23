@@ -91,7 +91,7 @@ function Homepage() {
         </>
       )}
 
-      {documents > loadcount ? (
+      {documents as any > loadcount ? (
         <span
           className="absolute right-4 bottom-2 cursor-pointer  rounded-md  text-[#000]"
           onClick={() => increaseloadccount(4)}

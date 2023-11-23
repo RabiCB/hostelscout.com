@@ -9,7 +9,7 @@ interface Iprops{
 
 }
 
-export const useLoadcounter=create<Iprops>()(
+export  const useLoadcounter=create<Iprops>()(
     (set)=>({
         loadcount:8,
         increaseloadccount:(by:any)=>set((state)=>({

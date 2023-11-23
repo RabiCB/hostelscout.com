@@ -2,16 +2,17 @@
 import Navbar from '../components/Navbar'
 import Homepage from '../components/Homepage'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
-import { Client, Databases, ID,Query  } from "appwrite";
 
+import React from 'react'
 
 export default function Home() {
 
   
 <Head>
+  <title>Hostelscout</title>
 <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUUDIWZF5wMie9Tlz_tZIVlZ7kH4ApfoiVgUVXhIma&s" />
 <meta name="google-site-verification" content="XIAahfWG8YRWavFqXIBlRtVhromJbmrAf8bnRmfZIao" />
+
 </Head>
 //  useEffect(()=>{
 
