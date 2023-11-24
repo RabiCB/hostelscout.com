@@ -14,6 +14,9 @@ export const metadata = {
   language: "ES",
   robots: "index,follow",
   coverage: "worldwide",
+  verification: {
+    google: "rqoGcoydFL1P8M80747RFMH41LZkBG1Ti4eCLGPiAEo",
+  },
   url: "https://hostelscout.vercel.app/",
   openGraph: {
     title: "hostelscout",
