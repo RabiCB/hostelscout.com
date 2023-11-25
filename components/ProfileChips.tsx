@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { BiHelpCircle, BiLogInCircle } from "react-icons/bi";
 import { MdOutlineCreate } from "react-icons/md";
-import { userStore } from "@/Zustandstores/Userstore";
+import { userStore } from "../Zustandstores/Userstore";
 const ProfileChips = ({ user ,logout}: any) => {
   const [open, setOpen] = useState(false);
 
@@ -60,7 +60,7 @@ const ProfileChips = ({ user ,logout}: any) => {
               : " flex absolute text-[var(--accent-gray)] right-0 top-[3rem] w-[200px]  py-4 flex-col rounded-md shadow-md bg-white"
           }
         >
-          {user ? (
+          {userstate ? (
             <>
               <Link
                 className="px-4 flex justify-between items-center hover:text-white hover:bg-[#E63946] py-[0.5rem] "

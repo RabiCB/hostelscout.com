@@ -7,9 +7,9 @@ import { Client, Account } from "appwrite";
 import { useRouter } from "next/navigation";
 import { RxCross1 } from "react-icons/rx";
 import React from "react";
-import { useSearchStore } from "@/Zustandstores/Searchstore";
+import { useSearchStore } from "../Zustandstores/Searchstore";
 import Link from "next/link";
-import { userStore } from "@/Zustandstores/Userstore";
+import { userStore } from "../Zustandstores/Userstore";
 const Navbar = () => {
   const router = useRouter();
 
