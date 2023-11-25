@@ -38,6 +38,7 @@ const Home = () => {
     databases
       .listDocuments("647b2b3bdbfeed04e463", "647b2b550dddd5971409", [
         Query.startsWith("hostelname", `${search}`),
+        Query.startsWith("Location",`${search}`)
       ])
       .then((res) => {
         console.log(res);

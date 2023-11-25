@@ -24,7 +24,7 @@ const Commonnav = () => {
       const promise = account.get();
   
       promise.then(function (response) {
-        console.log(response); 
+        console.log(response ,"kkkk"); 
         setUser(response);
       }, function (error) {
         console.log(error); // Failure
@@ -35,7 +35,7 @@ const Commonnav = () => {
     
   return (
     <>
-      <div className="navbar-container border-[1px] border-[#DDDDDD] flex px-[2rem] justify-between items-center h-[5rem] ">
+      <div className=" border-[1px] border-[#DDDDDD] flex px-[1rem] justify-between items-center h-[5rem] ">
         <div>
           <span  onClick={()=>router.push("/")} className="font-bold text-[#1D3557] text-xl cursor-pointer">
             HostelScout

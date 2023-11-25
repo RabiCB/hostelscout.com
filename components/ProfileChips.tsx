@@ -5,11 +5,13 @@ import Link from "next/link";
 import React from "react";
 import { BiHelpCircle, BiLogInCircle } from "react-icons/bi";
 import { MdOutlineCreate } from "react-icons/md";
-
+import { userStore } from "@/Zustandstores/Userstore";
 const ProfileChips = ({ user ,logout}: any) => {
   const [open, setOpen] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
+
+  const {username,userstate}=userStore()
 
   // to close
   useEffect(() => {
@@ -32,17 +34,25 @@ const ProfileChips = ({ user ,logout}: any) => {
     setOpen(!open);
   };
 
-  console.log("reeggege", user);
+
   return (
     <>
       <div
         ref={ref}
         onClick={handleDropdown}
-        className=" relative  flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-4 px-4 py-2 "
+        className=" relative items-center flex cursor-pointer border-[1px] rounded-[1.5rem] border-[#DDDDDD] gap-2 px-2 py-2 "
       >
-        <FiMenu className="text-[#878a8d]" size={25} />
-        <BsPersonCircle className="text-[#878a8d]" size={25} />
-        
+        <FiMenu className="text-[#878a8d]" size={24} />
+       
+        {userstate?<div className="bg-black h-[24px] w-[24px] rounded-full flex items-center justify-center">
+          <p className="uppercase text-[#fff]">
+          {
+            username?.[0]
+          }
+          </p>
+
+        </div>:<BsPersonCircle className="text-[#878a8d]" size={18} />}
+       
         <div
           className={
             !open

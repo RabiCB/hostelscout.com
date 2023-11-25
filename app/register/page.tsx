@@ -13,6 +13,38 @@ import { useState } from "react";
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import {AiFillEyeInvisible,AiFillEye} from "react-icons/ai"
 
+export const metadata = {
+  title: "Hostelscout",
+  description:
+    "Hostelscout expolore hostels and accomodation around the globe ",
+  keywords:
+    "hostelscout, hostels in nepal , hostel near me , best hostel in nepal , best hostels, accomdation, cheap hostels, hostel , hostescout , login hostelscout",
+  subject: "hostels and accomdation",
+  copyright: "chesterlee",
+  language: "ES",
+  robots: "index,follow",
+  coverage: "worldwide",
+ 
+  url: "https://hostelscout.vercel.app/",
+  openGraph: {
+    title: "hostelscout",
+    description: "hostels and accomodations",
+    url: "https://nextjs.org",
+    siteName: "Hostelscout",
+    images: [
+      {
+        url: "https://hostelscout.vercel.app/hostelscoutlogo.png",
+      },
+      {
+        url: "https://hostelscout.vercel.app/hostelscoutlogo.png",
+
+        alt: "hostelscoutlogo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
   ref,
@@ -79,9 +111,9 @@ export default function Register() {
     <div className=" flex  bg-[#F5F5F7] p-4  items-center justify-center h-[100vh]">
       <div className="flex flex-col  bg-white shadow-lg rounded-[10px] py-4 ">
         <span className="text-center text-[#5C6574] text-xl font-bold ">Sign Up</span>
-        <span className="text-center mt-2 text-[#5C6574] ">
+        <h1 className="text-center mt-2 text-[#5C6574] ">
           Welcome back! Please enter your details
-        </span>
+        </h1>
 
         <form
           onSubmit={handleSubmit(onSubmit)}

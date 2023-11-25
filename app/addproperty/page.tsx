@@ -192,7 +192,7 @@ export default function Addproperty() {
         <>
 
             <div className="pt-4 max-md:px-3 px-6 h-full pb-4">
-                <span className="text-center my-2  flex justify-center items-center text-gray-600 ">Add your property</span>
+                <h1 className="text-center my-2  flex justify-center items-center text-gray-600 ">Add your property</h1>
                 <Divider light />
                 <div>
                     <form className=" max-md:px-2 w-full  px-6 py-2 flex flex-col gap-3 " onSubmit={handleSubmit(onSubmit)}>

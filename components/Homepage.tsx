@@ -46,7 +46,7 @@ function Homepage() {
 
 
   return (
-    <div className="max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 h-auto grid px-6 grid-cols-4 gap-6 mt-4 pb-6 relative">
+    <div className="max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 h-auto grid px-6 grid-cols-4 gap-6 mt-4 pb-6 ">
       {appwrite.length > 1 ? (
         appwrite.map((d: any) => (
           <Link href={`/hostel/${d?.$id}`} key={d.hostelname}>
@@ -91,18 +91,7 @@ function Homepage() {
         </>
       )}
 
-      {documents as any > loadcount ? (
-        <span
-          className="absolute right-4 bottom-2 cursor-pointer  rounded-md  text-[#000]"
-          onClick={() => increaseloadccount(4)}
-        >
-          loadmore
-        </span>
-      ) : (
-        <span className="absolute right-4 bottom-2 cursor-pointer  rounded-md  text-[#000]">
-          nomore data
-        </span>
-      )}
+     
     </div>
   );
 }

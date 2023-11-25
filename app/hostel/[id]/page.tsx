@@ -43,7 +43,7 @@ export default function Page({ params: { id } }: any) {
     <div className="h-auto w-full flex flex-col px-6 pb-6 mt-4">
       {appwrite ? (
         <div className="flex flex-col gap-1.5">
-          <p className="font-bold text-base">{appwrite?.hostelname}</p>
+          <h1 className="font-bold text-base">{appwrite?.hostelname}</h1>
           <span className="font-semibold flex gap-0.5 items-center text-md">
             {appwrite?.Location || "-"}
             <FiMapPin />
