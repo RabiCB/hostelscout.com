@@ -1,19 +1,18 @@
 import React from "react"
 import Commonnav from "../../components/commonnav"
-
-export const metadata = {
+import type { Metadata } from 'next'
+export const metadata:Metadata = {
     title: "Hostelscout",
     description:
       "Hostelscout expolore hostels and accomodation around the globe ",
     keywords:
       "hostelscout, hostels in nepal , hostel near me , best hostel in nepal , best hostels, accomdation, cheap hostels, hostel , hostescout , login hostelscout",
-    subject: "hostels and accomdation",
-    copyright: "chesterlee",
-    language: "ES",
-    robots: "index,follow",
-    coverage: "worldwide",
    
-    url: "https://hostelscout.vercel.app/",
+
+    robots: "index,follow",
+    
+  
+   
     openGraph: {
       title: "hostelscout",
       description: "hostels and accomodations",

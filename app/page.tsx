@@ -2,7 +2,7 @@
 import Navbar from '../components/Navbar'
 import Homepage from '../components/Homepage'
 import Head from 'next/head'
-
+import type { Metadata } from 'next'
 import React from 'react'
 export const metadata = {
   title: "Hostelscout",
