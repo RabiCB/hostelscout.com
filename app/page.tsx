@@ -4,7 +4,7 @@ import Homepage from '../components/Homepage'
 import Head from 'next/head'
 import type { Metadata } from 'next'
 import React from 'react'
-export const metadata = {
+ const metadata = {
   title: "Hostelscout",
   description:
     "Hostelscout expolore hostels and accomodation around the globe ",
