@@ -7,7 +7,7 @@ import React from 'react'
 export const metadata = {
   title: "Hostelscout",
   description:
-    "Hostelscout expolore hostels and accomodation around the globe ",
+    "Hostelscout explore hostels and accomodation around the globe ",
   keywords:
     "hostelscout, hostels in nepal , hostel near me , best hostel in nepal , best hostels, accomdation, cheap hostels, hostel , hostescout , login hostelscout",
   subject: "hostels and accomdation",
