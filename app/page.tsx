@@ -1,10 +1,10 @@
-"use client"
+
 import Navbar from '../components/Navbar'
 import Homepage from '../components/Homepage'
 import Head from 'next/head'
-import type { Metadata } from 'next'
+import metada from 'next'
 import React from 'react'
- const metadata = {
+export const metadata = {
   title: "Hostelscout",
   description:
     "Hostelscout expolore hostels and accomodation around the globe ",

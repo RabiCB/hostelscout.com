@@ -8,7 +8,31 @@ import Link from "next/link";
 import { Client, Query, Databases } from "appwrite";
 import Skeletonvariant from "../features/skeleton";
 import { useLoadcounter } from "../Zustandstores/loadcounter";
+
+const getPosts = async () => {
+  const client = new Client()
+  .setEndpoint("https://cloud.appwrite.io/v1")
+  .setProject("647b1d99a6be71182293");
+
+const databases = new Databases(client);
+
+let promise = databases.listDocuments(
+  "647b2b3bdbfeed04e463",
+  "647b2b550dddd5971409",
+
+  
+);
+
+  return promise?.then((res)=>{
+    res.documents
+  })
+};
 function Homepage() {
+
+  const data=getPosts()
+
+
+  
   const { loadcount, increaseloadccount } = useLoadcounter();
   const [appwrite, setAppwrite] = useState<any | []>([]);
   const [documents, setDocuments] = useState<number | null | undefined>(
