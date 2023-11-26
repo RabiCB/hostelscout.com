@@ -4,7 +4,7 @@ import Commonnav from "../../components/commonnav"
 export const metadata = {
     title: "Hostelscout",
     description:
-      "Hostelscout expolore hostels and accomodation around the globe ",
+      "hostelscout, hostels in nepal , hostel near me , best hostel in nepal , best hostels, accomdation, cheap hostels, hostel , hostescout , login hostelscout",
     keywords:
       "hostelscout, hostels in nepal , hostel near me , best hostel in nepal , best hostels, accomdation, cheap hostels, hostel , hostescout ,login hostelscout",
     subject: "hostels and accomdation",

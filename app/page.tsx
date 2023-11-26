@@ -5,9 +5,9 @@ import Head from 'next/head'
 import metada from 'next'
 import React from 'react'
 export const metadata = {
-  title: "Hostelscout",
+  title: "Hostelscout, Unleashing Adventure, One Stay at a Time",
   description:
-    "Hostelscout explore hostels and accomodation around the globe ",
+    "Welcome to HostelScout, your ultimate destination for discovering the best hostels across the country! , HostelScout is your go-to platform .",
   keywords:
     "hostelscout, hostels in nepal , hostel near me , best hostel in nepal , best hostels, accomdation, cheap hostels, hostel , hostescout , login hostelscout",
   subject: "hostels and accomdation",
@@ -16,11 +16,11 @@ export const metadata = {
   robots: "index,follow",
   coverage: "worldwide",
  
-  url: "https://hostelscout.vercel.app/",
+  url: "https://hostelscout.netlify.app/",
   openGraph: {
-    title: "hostelscout",
-    description: "hostels and accomodations",
-    url: "https://nextjs.org",
+    title: "Hostelscout, Unleashing Adventure, One Stay at a Time",
+    description: "Welcome to HostelScout, your ultimate destination for discovering the best hostels across the country! , HostelScout is your go-to platform .",
+    url: "https://hostelscout.netlify.app/",
     siteName: "Hostelscout",
     images: [
       {
